@@ -22,7 +22,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import it.alfasoft.viviana.bean.FatturaBean;
 import it.alfasoft.viviana.dao.FatturaDao;
 
-public class Servizio {
+public class ServizioFattura {
 	FatturaDao fDao=new FatturaDao();
 	
 	

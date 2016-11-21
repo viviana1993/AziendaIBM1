@@ -6,7 +6,7 @@ import java.util.List;
 
 import it.alfasoft.viviana.bean.FatturaBean;
 import it.alfasoft.viviana.filtri.FiltriFatturaMeseAnno;
-import it.alfasoft.viviana.servizi.Servizio;
+import it.alfasoft.viviana.servizi.ServizioFattura;
 
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("fatture")
 @Produces(MediaType.APPLICATION_JSON)
 public class RisorseFattura {
-	private Servizio s=new Servizio();
+	private ServizioFattura s=new ServizioFattura();
 	
 	
 	

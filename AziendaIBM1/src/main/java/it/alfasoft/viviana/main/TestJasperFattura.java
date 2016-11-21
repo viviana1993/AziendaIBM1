@@ -1,7 +1,7 @@
 package it.alfasoft.viviana.main;
 
 import it.alfasoft.viviana.bean.FatturaBean;
-import it.alfasoft.viviana.servizi.Servizio;
+import it.alfasoft.viviana.servizi.ServizioFattura;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,7 +22,7 @@ public class TestJasperFattura {
 
 	public static void main(String[] args) {
 		
-		Servizio s=new Servizio();
+		ServizioFattura s=new ServizioFattura();
 		String nomeFile="FatturaBean.pdf";
 		
 		 String percorso  = "C:\\Users\\Viviana\\Desktop\\";
