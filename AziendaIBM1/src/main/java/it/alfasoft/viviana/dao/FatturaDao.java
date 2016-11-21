@@ -91,9 +91,7 @@ public class FatturaDao {
 					return f;
 				}
 
-		
-		
-		
+				
 		
 		//metodo per leggere tutte le fatture
 		@SuppressWarnings("unchecked")

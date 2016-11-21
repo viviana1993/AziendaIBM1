@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 
 import net.sf.jasperreports.engine.JREmptyDataSource;
@@ -16,7 +16,6 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 
 public class TestJasperFattura {
@@ -31,24 +30,20 @@ public class TestJasperFattura {
 		 String fileFinale=percorso+nomeFile;
 		 
 		 
-		
 		try {
-            
-
-          //la mia lista che mantiene i dati
-            List<FatturaBean> fatture = s.leggiFatture();
-            
-
-          // Converto la  lista to JRBeanCollectionDataSource 
-          JRBeanCollectionDataSource itemsJRBean = new JRBeanCollectionDataSource(fatture,false);
 
           //  una mappa per mandare i parametri a Jasper 
           Map<String, Object> parameters = new HashMap<String, Object>();
-        
-          parameters.put("DatasetFatturaBean", itemsJRBean);
+          FatturaBean fBean=s.cercaFatturaCodice("bbb");
+          
+          parameters.put("importo", fBean.getImporto());
+
+          parameters.put("dataEmissione", fBean.getDataEmissione());
+
+          parameters.put("codiceFattura", fBean.getcodiceFattura());
 
           //  file compilato di jasper (.jasper) di Jasper Report per creare  PDF 
-          JasperPrint jasperPrint = JasperFillManager.fillReport("ElencoFatture.jasper", parameters, new JREmptyDataSource());
+          JasperPrint jasperPrint = JasperFillManager.fillReport("Fattura.jasper", parameters, new JREmptyDataSource());
 
           //outputStream per creare PDF 
           OutputStream outputStream = new FileOutputStream(new File(fileFinale));

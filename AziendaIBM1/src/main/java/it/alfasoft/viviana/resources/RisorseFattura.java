@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.alfasoft.viviana.bean.FatturaBean;
-import it.alfasoft.viviana.filtri.FiltriFatturaAnno;
 import it.alfasoft.viviana.filtri.FiltriFatturaMeseAnno;
 import it.alfasoft.viviana.servizi.Servizio;
 
@@ -45,7 +44,10 @@ public class RisorseFattura {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response addFattura(FatturaBean f){
-		s.aggiungiFattura(f);
+		boolean b=s.aggiungiFattura(f);
+		if(b==true){
+			s.creaPDF(f);
+		}
 
 		return Response.status(Status.CREATED)
 						.entity(f)
@@ -54,17 +56,10 @@ public class RisorseFattura {
 	
 	@GET
 	@Path("/{mese}/{anno}")
-	public String getContextParameter(@PathParam("mese") int mese, @PathParam("anno") int anno){
+	public List<FatturaBean> getFatturaMeseAnno(@PathParam("mese") int mese, @PathParam("anno") int anno){
 		
-		return anno+ " " + mese;
+		return new ArrayList<FatturaBean>(s.leggiFattureMeseAnno(mese, anno));
 	}
-	
-//	@GET
-//	@Path("/{anno}")
-//	public int getContextParameter(@BeanParam FiltriFatturaAnno ff){
-//		
-//		return ff.getAnno();
-//	}
 	
 	
 }
