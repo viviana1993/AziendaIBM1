@@ -1,0 +1,64 @@
+#Container{width:100%;
+           /* height:auto; */
+      border:1px solid blue;
+           background:red;
+	  margin: 0;
+	  padding:0;
+	 
+	  } 
+#header{  top:0;
+         height:60px;
+        background-color:red;
+		width:100%;
+            background:red;
+		text-align:center;
+		
+}
+p{
+	color:blue
+}
+
+.menu{
+	  width:30%;
+	  height:350px;
+	  background:pink;
+	  float:left;
+	  
+	  text-align:center;
+	
+}
+
+#content{
+	   width:70%;
+	   height:350px;
+	  
+/* 	     background-image: url('bgfootball.jpg'); */
+/* 	      background-size: 100%; */
+       background-color:gray;
+	   float:left;
+	   text-align:center;
+	   
+}
+.content2 { height:400px;
+		background-color:red;
+		}
+.table1 th,tr,td{
+	border:1px solid black;
+}		
+		
+
+ #footer{
+	    height:60px;
+		text-align:center;
+		background-color:orange;
+} 
+
+ul
+{
+    list-style-type: none;
+}
+
+body{
+	margin:0;
+}
+.clear { clear:both;}

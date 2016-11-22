@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Fattura" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b0cef50-594f-48b0-8b34-1e6e0b269a60">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="codiceFattura" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[$P{codiceFattura}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="importo" class="java.lang.Double">
+		<defaultValueExpression><![CDATA[$P{importo}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dataEmissione" class="java.util.Date">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[$P{dataEmissione}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="codiceFattura" class="java.lang.String">
+		<fieldDescription><![CDATA[${codiceFattura}]]></fieldDescription>
+	</field>
+	<field name="importo" class="java.lang.String">
+		<fieldDescription><![CDATA[$P{importo}]]></fieldDescription>
+	</field>
+	<field name="dataEmissione" class="java.lang.String">
+		<fieldDescription><![CDATA[$P{dataEmissione}]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="124" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="10" y="0" width="151" height="30" uuid="dbe4e4f7-0e3f-4055-9fff-1ab411c225a7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="0" width="170" height="30" uuid="776209ef-0e49-4e94-a0d8-cd95b07a48f9"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alfasoft ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="450" y="0" width="90" height="80" uuid="7af16a10-d85c-4f94-ab6d-2050853176c9"/>
+				<imageExpression><![CDATA["alfaSoftLogo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="3" y="94" width="172" height="30" uuid="d8b44bc8-0fb3-41ff-af45-95bdd8c0c6f7"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dettagli Fattura]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="290" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="140" width="120" height="30" uuid="9ec1500e-33a5-495f-b660-5403a6615c29"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Codice fattura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="200" width="100" height="30" uuid="d6ac9d65-7b67-4e12-8354-11d5accff894"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Importo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="260" width="140" height="30" uuid="0a3f2187-4547-41fe-9450-b9dd41d23926"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[data di emissione:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="140" width="140" height="30" uuid="16b573b4-1ce8-4f38-b165-eb7505f27e7b"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiceFattura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="181" y="200" width="99" height="30" uuid="0f8c27c3-9f54-427c-9068-70374e85d551"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{importo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="260" width="140" height="30" uuid="831a7fdc-bf2f-405f-beed-e4b5010f1683"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataEmissione}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

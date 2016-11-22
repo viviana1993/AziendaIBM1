@@ -55,7 +55,8 @@ public class ServizioFattura {
 		
 		//metodo per rimuovere fattura
 		public boolean rimuoviFattura(FatturaBean f){
-			return fDao.rimuoviFattura(f);
+			FatturaBean fV=fDao.trovaFatturaCodice(f.getcodiceFattura());
+			return fDao.rimuoviFattura(fV);
 		}
 		
 	//metodo per creare il pdf della fattura
