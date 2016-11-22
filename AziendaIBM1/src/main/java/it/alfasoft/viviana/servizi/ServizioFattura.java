@@ -61,8 +61,8 @@ public class ServizioFattura {
 	//metodo per creare il pdf della fattura
 		
 		
-		public String creaPDF(FatturaBean f){
-			String nomeFile="FatturaBean"+f.getcodiceFattura()+".pdf";
+		public String creaPDF(FatturaBean f,String pathToJasper){
+			String nomeFile="Fat_"+f.getcodiceFattura()+".pdf";
 			
 			 String percorso  = "C:\\Users\\Viviana\\Desktop\\fatture\\";
 			 
@@ -79,16 +79,16 @@ public class ServizioFattura {
 	          parameters.put("dataEmissione", fBean.getDataEmissione());
 
 	          parameters.put("codiceFattura", fBean.getcodiceFattura());
-	          try {
-				String current = new java.io.File( "." ).getCanonicalPath();
-				System.out.println(current);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//	          try {
+//				String current = new java.io.File( "." ).getCanonicalPath();
+//				System.out.println(current);
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 	          
 	          //  file compilato di jasper (.jasper) di Jasper Report per creare  PDF 
-	          JasperPrint jasperPrint = JasperFillManager.fillReport("C:\\Users\\Viviana\\git\\AziendaIBM1\\AziendaIBM1\\src\\main\\webapp\\jasper\\Fattura.jasper", parameters, new JREmptyDataSource());
+	          JasperPrint jasperPrint = JasperFillManager.fillReport(pathToJasper, parameters, new JREmptyDataSource());
 
 	          //outputStream per creare PDF 
 	          OutputStream outputStream = new FileOutputStream(new File(fileFinale));
