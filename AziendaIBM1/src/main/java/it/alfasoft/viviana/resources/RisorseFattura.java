@@ -99,7 +99,7 @@ public class RisorseFattura {
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<FatturaBean> rimuoviFattura(String codiceFattura){	
-		s.rimuoviFattura();
+		s.rimuoviFattura(s.);
 		return new ArrayList<FatturaBean>(s.leggiFatture());
 	}
 	
